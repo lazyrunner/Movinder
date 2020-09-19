@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <span class="navbar-toggle" id="js-navbar-toggle" (click)="toggleMenu()">
+        hamburger
+    </span>
+    <a href="/" class="logo">Angular Learnings</a>
+    <ul class="main-nav" [ngClass]="[displayClass]">
+        
+        <li *ngFor="let item of menuItems">
+            <a href="{{item.path}}" class="nav-links">{{ item.name }}</a>
+        </li>
+    </ul>
+</nav>

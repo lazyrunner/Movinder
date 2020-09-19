@@ -1,0 +1,20 @@
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
+  
+  .box .row.header {
+    flex: 0 1 auto;
+    
+  }
+  
+  .box .row.content {
+    background: #373737;
+    flex: 1 1 auto;
+  }
+  
+  .box .row.footer {
+    flex: 0 1 40px;
+  }

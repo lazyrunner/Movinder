@@ -1,0 +1,10 @@
+.footer {
+    background-color: #000000;
+    height: 100%;
+}
+
+.footer-text {
+    float: right;
+    margin: 10px 40px;
+    color: #fff;
+}

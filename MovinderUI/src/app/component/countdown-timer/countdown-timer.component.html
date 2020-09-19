@@ -1,0 +1,41 @@
+<div class="countdown-body" [style.backgroundImage]="'url(assets/img/background-' + selectedBackground + '.jpg)'">
+    <div class="content" >
+        <div class="content-body-col" *ngIf="!showTimmer"> 
+            <div class="countdown-items">
+                <span class="intro-text">Show countdown to date </span> <input [(ngModel)]="countdownDate" (change)="resetError()" type="date" id="birthday" name="birthday">
+            </div>
+            <div class="countdown-items">
+                <button class="button" (click)='startTimmer()'>Start countdown</button>
+            </div>
+            <div class="countdown-items" *ngIf="showeError">
+                <span class="intro-text error">You can not count down to the past!</span>
+            </div>
+        </div>
+        <!-- show timmer -->
+        <div class="content-body-col" *ngIf="showTimmer"> 
+            <div class="countdown-items">
+                <span class="intro-text">Count down until - {{countdownDate}} </span> 
+            </div>
+            <div class="countdown-items">
+                <div class="clock-item">
+                    <div class="clock-value clock-number">{{days}}</div>
+                    <div class="clock-value">days</div>
+                </div>
+                <div class="clock-item">
+                    <div class="clock-value clock-number">{{hours}}</div>
+                    <div class="clock-value">hours</div>
+                </div>
+                <div class="clock-item">
+                    <div class="clock-value clock-number">{{min}}</div>
+                    <div class="clock-value">mins</div>
+                </div>
+                <div class="clock-item">
+                    <div class="clock-value clock-number">{{sec}}</div>
+                    <div class="clock-value">sec</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
