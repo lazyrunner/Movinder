@@ -8,6 +8,8 @@ import { FooterComponent } from './shared/component/footer/footer.component';
 import { CountdownTimerComponent } from './component/countdown-timer/countdown-timer.component';
 import { FormsModule } from '@angular/forms';
 import { QuizComponent } from './component/quiz/quiz.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { QuizComponent } from './component/quiz/quiz.component';
     HeaderComponent,
     FooterComponent,
     CountdownTimerComponent,
-    QuizComponent
+    QuizComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

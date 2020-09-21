@@ -1,0 +1,156 @@
+.box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
+  
+  .box .row.header {
+    flex: 0 1 auto;
+    
+  }
+  
+  .box .row.content {
+    background: #373737;
+    flex: 1 1 auto;
+  }
+  
+  .box .row.footer {
+    flex: 0 1 40px;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.navbar {
+    font-size: 18px;
+    background-color: black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+}
+.main-nav {
+    list-style-type: none;
+}
+.hidden {
+    display: none;
+}
+
+.main-nav li{
+    text-align: center;
+    margin: 15px auto;
+}
+
+.nav-links,
+.logo {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+.fa-bars{
+    color:#ffff;
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer; 
+    color: rgba(255,255,255,0.8);
+    font-size: 24px;
+}
+
+.logo {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px; 
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+    .main-nav {
+        display: flex;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .main-nav li {
+        margin: 0;
+    }
+    .nav-links {
+        margin-left: 40px;
+    }
+    .logo {
+        margin-top: 0;
+    }
+   .navbar-toggle {
+       display: none;
+    }
+    .logo:hover,
+    .nav-links:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.quiz-body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 35%;
+    height: 250px;
+    background: #616161;
+    box-shadow: 3px 3px 15px 3px #000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.quiz-content{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-container{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+}
+
+.question {
+    font-size: 23px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.login-button {
+    background: orange;
+    border-radius: 10px;
+    width: 100%;
+    height: 43px;
+    font-size: 28px;
+}
+
+.items{
+    flex:1 1 auto;
+}
+
+.login-input {
+    margin-left: 30px;
+    width: 75%;
+}
