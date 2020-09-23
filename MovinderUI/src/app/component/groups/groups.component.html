@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="quiz-body">
+        <div class="container">
+            <div class="quiz-content">
+                <div class="question">
+                    Join a group
+                </div>
+                <div class="option-container">
+                    <div class="items">
+                         code <input class="login-input" type="text" [(ngModel)] = "groupCode" (keyup)="inputChanged()"/>
+                    </div>
+                </div>
+                <div class="question">
+                    <button class="login-button" (click) = "joinGroup()">join</button>
+                </div>
+                <div class="error" *ngIf="showError">
+                    Username does not belong to group or group does not exist
+                </div>
+                <div class="question">
+                    Or
+                </div>
+                <div class="question">
+                    <button class="login-button create-btn" (click) = "joinGroup()">Create a Group</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

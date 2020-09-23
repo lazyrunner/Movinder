@@ -1,0 +1,73 @@
+.content{
+    height:100%;
+}
+
+.quiz-body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 40%;
+    background: #616161;
+    box-shadow: 3px 3px 15px 3px #000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.quiz-content{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-container{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    font-size: 23px;
+    font-weight: bold;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.login-button {
+    background: orange;
+    border-radius: 10px;
+    width: 100%;
+    height: 43px;
+    font-size: 28px;
+}
+
+.items{
+    flex:1 1 auto;
+}
+
+.login-input {
+    margin-left: 30px;
+    width: 75%;
+}
+
+.error{
+    font-size: 16px;
+    width: 75%;
+    color: darkred;
+}
+
+.create-btn{
+    height: 100px;
+    background: #C4C4C4;
+    cursor: pointer;
+}

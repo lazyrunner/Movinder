@@ -4,11 +4,20 @@ import {DashboardLayoutComponent} from './layout/dashboard-layout/dashboard-layo
 import {CountdownTimerComponent} from './component/countdown-timer/countdown-timer.component';
 import {QuizComponent} from './component/quiz/quiz.component';
 import {LoginComponent} from './component/login/login.component';
+import {GroupsComponent} from './component/groups/groups.component';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'groups',
+    component: DashboardLayoutComponent,
+    children: [{
+      path: '',
+      component: GroupsComponent
+    }]
   },
   {
     path: 'day2',
