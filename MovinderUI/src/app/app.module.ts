@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { QuizComponent } from './component/quiz/quiz.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
-
+import { GroupsComponent } from './component/groups/groups.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +20,15 @@ import { LoginComponent } from './component/login/login.component';
     FooterComponent,
     CountdownTimerComponent,
     QuizComponent,
-    LoginComponent
+    LoginComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

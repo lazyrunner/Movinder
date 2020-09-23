@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -11,14 +12,14 @@ export class HeaderComponent implements OnInit {
   isMenuVisable = false;
   displayClass = 'hidden';
 
-  constructor() {
+  constructor(private route: Router) {
     this.menuItems = [{
       name: 'Home',
       path: '/'
     },
     {
-      name: 'Countdown',
-      path: '/day2'
+      name: 'Groups',
+      path: '/groups'
     },
     {
       name: 'Quiz',
@@ -36,5 +37,9 @@ export class HeaderComponent implements OnInit {
     } else {
       this.displayClass = 'hidden';
     }
+  }
+
+  loadPage(path): void{
+    this.route.navigate([path]);
   }
 }

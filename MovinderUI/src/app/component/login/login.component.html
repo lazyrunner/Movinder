@@ -4,7 +4,7 @@
             <span class="navbar-toggle" id="js-navbar-toggle" >
                 hamburger
             </span>
-            <a href="/" class="logo">Angular Learnings</a>
+            <a href="/" class="logo">Movinder</a>
         </nav>
     </div>
     <div class="row content">
@@ -13,14 +13,17 @@
                 <div class="quiz-content">
                     <div class="option-container">
                         <div class="items">
-                             username <input class="login-input" type="text" [(ngModel)] = "username" />
+                             username <input class="login-input" type="text" [(ngModel)] = "username" (keyup)="inputChanged()"/>
                         </div>
                         <div class="items">
-                            password <input class="login-input" type="password" [(ngModel)] = "password"/>
+                            password <input class="login-input" type="password" [(ngModel)] = "password" (keyup)="inputChanged()"  />
                         </div>
                     </div>
                     <div class="question">
                         <button class="login-button" (click) = "login()">Login</button>
+                    </div>
+                    <div class="error" *ngIf="showError">
+                        Username or password is incorrect
                     </div>
                 </div>
             </div>
