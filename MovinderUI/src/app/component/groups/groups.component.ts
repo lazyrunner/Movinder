@@ -16,7 +16,9 @@ export class GroupsComponent implements OnInit {
     private groupService: GroupService,
     private userService: UserService,
     private route: Router
-    ) { }
+    ) {
+      this.groupCode = 'PPBqWA9';
+     }
 
   ngOnInit(): void {
   }
@@ -25,7 +27,7 @@ export class GroupsComponent implements OnInit {
     const userId = this.userService.userId;
     this.groupService.checkUser(userId, this.groupCode).subscribe(answer => {
       this.userService.groupId = answer.body.group_id;
-      this.route.navigate(['/day3']);
+      this.route.navigate(['/movies']);
     }, err => {
       this.showError = true;
       console.log(err.error.message);

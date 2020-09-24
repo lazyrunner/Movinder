@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="quiz-body">
+        <div class="container">
+            <div class="quiz-content">
+                <div class="question">
+                    {{movieList[index].title}}
+                </div>
+                <div class="option-container">
+                    <div class="items">
+                         <img src="assets/images/dislike.png" alt="Thumbs down" class="like-dislike" (click)="nextMovie()" />
+                    </div>
+                    <div class="items">
+                        <img src="{{'https://image.tmdb.org/t/p/w300/' + movieList[index].poster_path}}" alt="Thumbs Up" />
+                   </div>
+                   <div class="items">
+                    <img src="assets/images/like.png" alt="Thumbs Up" class="like-dislike" (click)="nextMovie()" />
+               </div>
+                </div>
+                <div class="summary">
+                    {{movieList[index].overview}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

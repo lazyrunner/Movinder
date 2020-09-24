@@ -22,8 +22,8 @@ export class HeaderComponent implements OnInit {
       path: '/groups'
     },
     {
-      name: 'Quiz',
-      path: '/day3'
+      name: 'Movies',
+      path: '/movies'
     }];
   }
 
