@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './component/login/login.component';
 import { GroupsComponent } from './component/groups/groups.component';
 import { CommonModule } from '@angular/common';
+import { MoviesComponent } from './component/movies/movies.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { CommonModule } from '@angular/common';
     CountdownTimerComponent,
     QuizComponent,
     LoginComponent,
-    GroupsComponent
+    GroupsComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var groupsRouter = require('./routes/groups');
+var moviesRouter = require('./routes/movies');
 
 var app = express();
 
@@ -40,5 +41,6 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/groups', groupsRouter);
+app.use('/movies', moviesRouter);
 
 module.exports = app;

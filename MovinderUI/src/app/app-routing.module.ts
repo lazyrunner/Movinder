@@ -5,6 +5,7 @@ import {CountdownTimerComponent} from './component/countdown-timer/countdown-tim
 import {QuizComponent} from './component/quiz/quiz.component';
 import {LoginComponent} from './component/login/login.component';
 import {GroupsComponent} from './component/groups/groups.component';
+import {MoviesComponent} from './component/movies/movies.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,14 @@ const routes: Routes = [
     children: [{
       path: '',
       component: GroupsComponent
+    }]
+  },
+  {
+    path: 'movies',
+    component: DashboardLayoutComponent,
+    children: [{
+      path: '',
+      component: MoviesComponent
     }]
   },
   {
