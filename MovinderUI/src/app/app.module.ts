@@ -13,6 +13,7 @@ import { LoginComponent } from './component/login/login.component';
 import { GroupsComponent } from './component/groups/groups.component';
 import { CommonModule } from '@angular/common';
 import { MoviesComponent } from './component/movies/movies.component';
+import { MatchesComponent } from './component/matches/matches.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { MoviesComponent } from './component/movies/movies.component';
     QuizComponent,
     LoginComponent,
     GroupsComponent,
-    MoviesComponent
+    MoviesComponent,
+    MatchesComponent
   ],
   imports: [
     BrowserModule,

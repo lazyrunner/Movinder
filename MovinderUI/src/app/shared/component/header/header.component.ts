@@ -24,6 +24,10 @@ export class HeaderComponent implements OnInit {
     {
       name: 'Movies',
       path: '/movies'
+    },
+    {
+      name: 'Matches',
+      path: '/matches'
     }];
   }
 

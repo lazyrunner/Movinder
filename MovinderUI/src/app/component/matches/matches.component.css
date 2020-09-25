@@ -1,0 +1,12 @@
+.matches {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .matches-div {
+        width: 185px;
+        margin: 10px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+  }

@@ -22,5 +22,23 @@ module.exports.GroupModel =  {
 					reject(err);
 				});
         });
-    }
+	},
+	getMembersCount: async (groupId) => {
+        return new Promise((resolve,reject) => {
+			let query = knex.withSchema('movinder_schema').from('group_members as gm');
+			query.count('*');
+			query.where(
+				{ 
+					'gm.group_id': groupId
+
+				});
+			query
+				.then(data => {
+					resolve(data[0] || null);
+				})
+				.catch(err => {
+					reject(err);
+				});
+        });
+	}
 }
