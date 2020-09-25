@@ -1,0 +1,6 @@
+<div class="matches">
+    <div class="matches-div" *ngFor="let movie of matchedMovies" >
+        <img src="{{'https://image.tmdb.org/t/p/w185/' + movie.poster_path}}" alt="Movie Poster" />
+        <div>{{movie.title}}</div>
+    </div>
+</div>

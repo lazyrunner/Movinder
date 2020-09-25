@@ -6,6 +6,7 @@ import {QuizComponent} from './component/quiz/quiz.component';
 import {LoginComponent} from './component/login/login.component';
 import {GroupsComponent} from './component/groups/groups.component';
 import {MoviesComponent} from './component/movies/movies.component';
+import {MatchesComponent} from './component/matches/matches.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,14 @@ const routes: Routes = [
     children: [{
       path: '',
       component: MoviesComponent
+    }]
+  },
+  {
+    path: 'matches',
+    component: DashboardLayoutComponent,
+    children: [{
+      path: '',
+      component: MatchesComponent
     }]
   },
   {

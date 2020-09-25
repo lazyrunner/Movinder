@@ -27,5 +27,32 @@ module.exports.ExternalMoviesModel = {
 
             req.end()
         });
+    },
+    getMovie: async (movieId) => {
+        let options = {
+            hostname: 'api.themoviedb.org',
+            path: '',
+            method: 'GET'
+        }
+        return new Promise((resolve, reject) => {
+            var str = '';
+            options.path = `/3/movie/${movieId}?api_key=<<api_key>>&language=en-US`;
+            const req = https.request(options, res => {
+                console.log(`statusCode: ${res.statusCode}`)
+                res.on('data', d => {
+                    str += d;
+                })
+                res.on('end', function () {
+                    resolve(JSON.parse(str));
+                });
+            })
+
+            req.on('error', error => {
+                console.error(error)
+                reject(error);
+            })
+
+            req.end()
+        });
     }
 }

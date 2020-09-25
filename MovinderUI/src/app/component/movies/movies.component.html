@@ -3,23 +3,39 @@
         <div class="container">
             <div class="quiz-content">
                 <div class="question">
-                    {{movieList[index].title}}
+                    {{movieList && movieList[index] && movieList[index].title || 'loading'}}
                 </div>
                 <div class="option-container">
                     <div class="items">
-                         <img src="assets/images/dislike.png" alt="Thumbs down" class="like-dislike" (click)="nextMovie()" />
+                         <img src="assets/images/dislike.png" alt="Thumbs down" class="like-dislike" (click)="nextMovie(false)" />
                     </div>
                     <div class="items">
-                        <img src="{{'https://image.tmdb.org/t/p/w300/' + movieList[index].poster_path}}" alt="Thumbs Up" />
+                        <img src="{{'https://image.tmdb.org/t/p/w300/' + movieList[index].poster_path}}" alt="Movie Poster" />
                    </div>
                    <div class="items">
-                    <img src="assets/images/like.png" alt="Thumbs Up" class="like-dislike" (click)="nextMovie()" />
+                    <img src="assets/images/like.png" alt="Thumbs Up" class="like-dislike" (click)="nextMovie(true)" />
                </div>
                 </div>
                 <div class="summary">
-                    {{movieList[index].overview}}
+                    {{movieList && movieList[index] && movieList[index].overview || 'loading'}}
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div id="myModal" class="modal" [style.display]="display">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" (click)="switchModal(false)">&times;</span>
+        <h2 class="question w-100">Its a Match </h2>
+      </div>
+      <div class="modal-body" title="{{matched.overview}}">
+        <img src="{{'https://image.tmdb.org/t/p/w300/' + matched.poster_path}}" alt="Movie Poster" />
+        <p> {{matched.title}}</p>
+      </div>
+    </div>
+  
+  </div>
