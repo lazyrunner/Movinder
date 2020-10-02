@@ -3,6 +3,17 @@
         <div class="container">
             <div class="quiz-content">
                 <div class="question">
+                    Your Groups
+                </div>
+                <div class="groups-list" *ngFor="let group of groupList"> 
+                    <div class="group-member" (click)=selectGroup(group.group_id)>
+                         {{group.group_name}}
+                    </div>
+                    <div class="group-member" (click)=selectGroup(group.group_id)>
+                        {{group.number_of_members}}
+                   </div>
+                </div>
+                <div class="question">
                     Join a group
                 </div>
                 <div class="option-container">

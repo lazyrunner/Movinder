@@ -71,3 +71,15 @@
     background: #C4C4C4;
     cursor: pointer;
 }
+.groups-list{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.group-member{
+    flex: 1 1 auto;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
