@@ -9,7 +9,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./groups.component.css']
 })
 export class GroupsComponent implements OnInit {
-  groupCode:string;
+  groupCode: string;
+  groupList = [];
   showError = false;
 
   constructor(
@@ -18,6 +19,7 @@ export class GroupsComponent implements OnInit {
     private route: Router
     ) {
       this.groupCode = 'PPBqWA9';
+      this.getListOfGroups();
      }
 
   ngOnInit(): void {
@@ -25,7 +27,7 @@ export class GroupsComponent implements OnInit {
 
   joinGroup(): void{
     const userId = this.userService.userId;
-    this.groupService.checkUser(userId, this.groupCode).subscribe(answer => {
+    this.groupService.joinGroup(userId, this.groupCode).subscribe(answer => {
       this.userService.groupId = answer.body.group_id;
       this.route.navigate(['/movies']);
     }, err => {
@@ -36,5 +38,19 @@ export class GroupsComponent implements OnInit {
 
   inputChanged(): void {
     this.showError = false;
+  }
+
+  getListOfGroups(): void {
+    const userId = this.userService.userId;
+    this.groupService.getListOfGroups(userId).subscribe(answer => {
+      this.groupList = answer.body;
+    }, err => {
+      console.log(err.error.message);
+    });
+  }
+
+  selectGroup(groupId): void {
+    this.userService.groupId = groupId;
+    this.route.navigate(['/movies']);
   }
 }

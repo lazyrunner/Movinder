@@ -2,14 +2,10 @@ var express = require('express');
 var router = express.Router();
 let {GroupService} = require('../services/groups.service');
 
-router.route('/').get( async (req, res, next) => {
-  //TODO:Getlist of groups the user belongs to   
-  res.send('respond with a resource');
-}).post( async (req, res, next) => {
-  //TODO:Create a new user
-  // use https://www.npmjs.com/package/shortid to generate code
-  
-});
+router.route('/list/:userId').get( async (req, res, next) => {
+  let { userId } = req.params;
+  res.send(await GroupService.getGroupsOfUser(userId));
+})
 
 router.route('/check-user').post( async (req, res, next) => {
   let { userId, groupCode} = req.body;
@@ -20,6 +16,16 @@ router.route('/check-user').post( async (req, res, next) => {
     res.status(404).json({
       message: 'User does not belong or group does not exist'
     });
+  }
+});
+
+router.route('/join').post( async (req, res, next) => {
+  let { userId, groupCode} = req.body;
+  try {
+    let group_details =await GroupService.joinGroup(userId,groupCode)
+    res.send(group_details);
+  } catch (err){
+    res.status(401).json({errorMessage:err.message});
   }
   
 });
